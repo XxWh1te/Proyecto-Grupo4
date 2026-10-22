@@ -82,6 +82,23 @@
                     </table>
                 </div>
 
+
+                <script>
+                    document.getElementById("buscarPlato").addEventListener("keyup", function () {
+                        let filtro = this.value.toLowerCase();
+                        let filas = document.querySelectorAll("tbody tr");
+
+                        filas.forEach(function (fila) {
+                            let nombre = fila.cells[1].textContent.toLowerCase();
+
+                            if (nombre.includes(filtro)) {
+                                fila.style.display = "";
+                            } else {
+                                fila.style.display = "none";
+                            }
+                        });
+                    });
+                </script>
             </body>
 
             </html>
